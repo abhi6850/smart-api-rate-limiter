@@ -136,7 +136,7 @@ Installation
 
 Clone the repository
 
-git clone https://github.com/yourusername/smart-api-rate-limiter.git
+git clone https://github.com/abhi6850/smart-api-rate-limiter.git
 cd smart-api-rate-limiter
 
 Install dependencies
