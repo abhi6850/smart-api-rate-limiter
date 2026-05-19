@@ -6,16 +6,10 @@
   NODE_VERSION = "18"
 
 [functions]
-  directory         = "netlify/functions"
-  node_bundler      = "esbuild"
-  included_files    = ["src/**"]
+  directory    = "netlify/functions"
+  node_bundler = "esbuild"
 
-# Redirect everything (except Netlify internals) to the API function
-[[redirects]]
-  from   = "/.netlify/functions/api/*"
-  to     = "/.netlify/functions/api/:splat"
-  status = 200
-
+# Route all traffic to the API function
 [[redirects]]
   from   = "/*"
   to     = "/.netlify/functions/api/:splat"
