@@ -1,0 +1,23 @@
+[build]
+  command   = "npm run build"
+  publish   = "public"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[functions]
+  directory         = "netlify/functions"
+  node_bundler      = "esbuild"
+  included_files    = ["src/**"]
+
+# Redirect everything (except Netlify internals) to the API function
+[[redirects]]
+  from   = "/.netlify/functions/api/*"
+  to     = "/.netlify/functions/api/:splat"
+  status = 200
+
+[[redirects]]
+  from   = "/*"
+  to     = "/.netlify/functions/api/:splat"
+  status = 200
+  force  = true
